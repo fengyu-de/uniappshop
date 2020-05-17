@@ -3,14 +3,112 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+			"path": "pages/category/index",
+			"style": {
+				"navigationBarTitleText": "分类"
+			}
+		},
+		{
+			"path": "pages/cart/index",
+			"style": {
+				"navigationBarTitleText": "购物车"
+			}
+		},
+		{
+			"path": "pages/user/index",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		},
+		{
+			"path": "pages/good_list/index",
+			"style": {
+				"navigationBarTitleText": "商品列表"
+			}
+		},
+		{
+			"path": "pages/good_detail/index",
+			"style": {
+				"navigationBarTitleText": "商品详情"
+			}
+		},
+		{
+			"path": "pages/collect/index",
+			"style": {
+				"navigationBarTitleText": "收藏"
+			}
+		},
+		{
+			"path": "pages/order/index",
+			"style": {
+				"navigationBarTitleText": "订单"
+			}
+		},
+		{
+			"path": "pages/search/index",
+			"style": {
+				"navigationBarTitleText": "搜索"
+			}
+		},
+		{
+			"path": "pages/feedback/index",
+			"style": {
+				"navigationBarTitleText": "意见反馈"
+			}
+		},
+		{
+			"path": "pages/login/index",
+			"style": {
+				"navigationBarTitleText": "登录"
+			}
+		},
+		{
+			"path": "pages/auth/index",
+			"style": {
+				"navigationBarTitleText": "授权"
+			}
+		},
+		{
+			"path": "pages/pay/index",
+			"style": {
+				"navigationBarTitleText": "结算"
 			}
 		}
 	],
 	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "优购首页",
+		"navigationBarBackgroundColor": "#eb4450"
+	},
+	"tabBar": {
+		"color": "#000",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"text": "首页",
+				"iconPath": "static/shouye.png",
+				"selectedIconPath": "static/shouye3.png"
+			},
+			{
+				"pagePath": "pages/category/index",
+				"text": "分类",
+				"iconPath": "static/icon_category.png",
+				"selectedIconPath": "static/icon_category2.png"
+			},
+			{
+				"pagePath": "pages/cart/index",
+				"text": "购物车",
+				"iconPath": "static/gouwuche.png",
+				"selectedIconPath": "static/gouwuche1.png"
+			}, {
+				"pagePath": "pages/user/index",
+				"text": "我的",
+				"iconPath": "static/wode.png",
+				"selectedIconPath": "static/wode4.png"
+			}
+		]
 	}
 }

@@ -1,14 +1,21 @@
 <template>
-  <view class="content"></view>
+  <view>
+    首页
+    <serchInput></serchInput>
+  </view>
 </template>
 
 <script>
+import serchInput from "@/components/serchinput/index";
 export default {
   data() {
     return {};
   },
   onLoad() {},
-  methods: {}
+  methods: {},
+  components: {
+    serchInput
+  }
 };
 </script>
 
