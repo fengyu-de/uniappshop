@@ -27,8 +27,10 @@
 		},
 		{
 			"path": "pages/good_list/index",
+
 			"style": {
-				"navigationBarTitleText": "商品列表"
+				"navigationBarTitleText": "商品列表",
+				"enablePullDownRefresh": true //开启下拉刷新
 			}
 		},
 		{
