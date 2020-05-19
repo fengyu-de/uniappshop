@@ -7,7 +7,7 @@
     <!-- 商品内容 -->
     <view class="good_content" v-if="index==0">
       <view class="first_tab">
-        <navigator class="goods_item" v-for="item in goodslist" :key="item.cat_id">
+        <navigator class="goods_item" v-for="item in goodslist" :key="item.goods_id" @click="func(item.goods_id)">
           <!-- 左侧图片容器 -->
           <view class="goods_img">
             <image :src="item.goods_small_logo" mode="widthFix"></image>
@@ -48,7 +48,7 @@ export default {
           isActive: false //是否激活选中
         }
       ],
-      index: 0,
+      index: 0,//选中按钮的索引
       params:{ //请求参数
         query:"",
         cid:"",
@@ -60,7 +60,7 @@ export default {
   },
   onLoad(e) {
     //接收上个页面传递过来的参数(id)
-    console.log(e.id);
+    console.log(e);
     this.params.cid=e.id
   },
   mounted(){
@@ -95,7 +95,14 @@ export default {
       // 数组的拼接扩展运算符
       this.goodslist=[...this.goodslist,...res[1].data.message.goods]
       uni.hideLoading()  //隐藏价值动画
-      console.log(res)
+      console.log("res",res)
+    },
+    // 跳转到商品详情页事件
+    func(id){
+      console.log(id)
+      uni.navigateTo({
+        url:`/pages/good_detail/index?id=${id}`
+      })
     }
   },
   // 滚动条触底事件

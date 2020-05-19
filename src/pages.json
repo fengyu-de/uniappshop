@@ -1,5 +1,6 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		
 		{
 			"path": "pages/category/index",
 			"style": {
@@ -10,6 +11,12 @@
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+			"path": "pages/good_detail/index",
+			"style": {
+				"navigationBarTitleText": "商品详情"
 			}
 		},
 
@@ -33,12 +40,7 @@
 				"enablePullDownRefresh": true //开启下拉刷新
 			}
 		},
-		{
-			"path": "pages/good_detail/index",
-			"style": {
-				"navigationBarTitleText": "商品详情"
-			}
-		},
+
 		{
 			"path": "pages/collect/index",
 			"style": {
