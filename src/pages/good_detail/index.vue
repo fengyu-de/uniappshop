@@ -110,7 +110,8 @@ export default {
       console.log(index)
       if(index==-1){
         // 3.不存在 第一次添加
-      this.goodinfo.num=1
+      this.goodinfo.num=1  //数量
+      this.goodinfo.checked=true  //默认选中
       cart.push(this.goodinfo)
       }else{
       //   // 4已经存在购物车数据 执行num++
