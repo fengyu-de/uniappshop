@@ -46,9 +46,9 @@
   <view class="footer_tool">
     <!-- 全选 -->
     <view class="all">
-      <checkbox-group>
-        <checkbox @click="allfun" :checked="all">全选</checkbox>
-      </checkbox-group>
+      
+        <radio v-model="all" @click="allfun">全选</radio>
+      
        </view>
        <!-- 总价格 -->
        <view class="all_price">
@@ -61,7 +61,7 @@
          结算({{num}})
        </view>
   </view>
-  <view class="null" v-if="goodslist.length==0">
+  <view class="null" v-if="goodslist.length===0">
       你还没有商品快去选购吧
   </view>
   </view>
@@ -90,15 +90,8 @@ export default {
       }
       this.datainfo = res2;
       // 将用户地址缓存
-      uni.setStorage({ ket: "userzhu", data: this.datainfo });
+      uni.setStorage({ key: "userzhu", data: this.datainfo });
       console.log("用户信息",res2);
-    },
-    // 点击全选事件
-    allfun(){
-         this.goodslist.forEach(i=>{
-        i.checked=true
-      }
-      )
     },
     // 商品的选中
    async nochecked(id){
@@ -117,6 +110,9 @@ export default {
      console.log("res",res)
      this.goodslist=res
      }
+    },
+    allfun(){
+      console.log("ee")
     },
     // 商品的增加删除
     sunfun(n,id){
@@ -145,13 +141,13 @@ export default {
     // 2.在判断缓存中是否有商品列表数据
     if(this.goodslist.length==0){
       uni.showToast({
-      title:"你还没有选择地址"
+      title:"你还没有选择商品"
     })
     return
     }
-    // 都通过跳转到支付页面
+    // 都通过跳转到支付页面(将用户信和选中的商品数据传递)
     uni.navigateTo({
-      url:"/pages/pay/index"
+      url:`/pages/pay/index?userinfo=${this.datainfo}&datalist=${this.datalist}`
     })
     }
   },
@@ -159,6 +155,7 @@ export default {
  async onShow(){
     // 获取缓存中的数据
    let res=await uni.getStorage({key:"cart"})
+   console.log("缓存",res)
    if(res.length==1){
      res=[]
      uni.showToast({
@@ -166,18 +163,23 @@ export default {
      })
      return
    }
-   console.log("缓存",res)
    this.goodslist=res[1].data
    console.log(res[1].data)
    console.log("goodslist",this.goodslist)
   },
   computed:{
-  all(){
+  all:{
     // every函数 数组的每一个项为true就返回true
-    if(this.goodslist.length==0){
-      return false
-    }
-   return this.goodslist.every(i=>i.checked)
+   get(){
+     console.log("hhhhh")
+     if(this.goodslist.length==0){
+       return false
+     }
+    return this.goodslist.every(i=>i.checked==true)
+   },
+   set(val){
+     console.log(val)
+   }
   },
   price(){
     let prices=0

@@ -97,12 +97,13 @@ export default {
    async func(){
        // 1.获取缓存中的购物车 （数组）
         let cart=await uni.getStorage({key:"cart"})
+        console.log(cart)
       if(cart.length==1){
-        cart=[]
+       cart=[]
       }else{
         cart=cart[1].data
       }
-      console.log(cart)
+      // console.log("cart",cart)
       // 2.判断商品对象是否存在于购物车数组中
       let index=cart.findIndex((v)=>{
        return v.goods_id==this.goodinfo.goods_id
