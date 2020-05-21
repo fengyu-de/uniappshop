@@ -6,7 +6,7 @@ npm install
 ```
 
 ### Compiles and hot-reloads for development
-```
+```·
 npm run serve
 ```
 
@@ -23,4 +23,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 3.pages：视图组件
 4.static：静态资源(图片。css)
 5.util:自己的帮助库
- -->
+ --> 
