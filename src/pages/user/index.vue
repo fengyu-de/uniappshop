@@ -62,7 +62,7 @@
        <view> 联系客服</view>
        <view> 400-618-4000</view>
       </view>
-      <view class="yijian">
+      <view class="yijian" @click="goyijian"> 
         意见反馈
       </view>
       <view class="about">
@@ -127,6 +127,12 @@ export default {
   gofun(num){
     uni.navigateTo({
       url:`/pages/collect/index?num=${num}`
+    })
+  },
+  // 跳转意见反馈页面
+  goyijian(){
+    uni.navigateTo({
+      url:"/pages/feedback/index"
     })
   }
   }

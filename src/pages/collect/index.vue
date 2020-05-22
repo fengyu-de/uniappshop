@@ -72,8 +72,8 @@ export default {
   },
   onLoad(e){
     console.log(e.num) //获取上一个页面传递过来的参数
-    this.tabs.forEach(i=>i.isActive=false)
-    if(e.num==1){
+    this.tabs.forEach(i=>i.isActive=false)   //将tabs的isActive改为false
+    if(e.num==1){     //通过传递过来的参数来tabs的isActive是否为true
       this.tabs[0].isActive=true
     }else if(e.num==2){
       this.tabs[1].isActive=true
@@ -87,11 +87,10 @@ export default {
   methods: {
     // 头部导航切换事件
     fn(index) {
-      this.index2=index
-      this.tabs.forEach(i => {
+      this.tabs.forEach(i => {  //将tabs的isActive变为false
         i.isActive = false;
       });
-      this.tabs[index].isActive = true;
+      this.tabs[index].isActive = true;  //点击的改为true
       console.log(index,this.num)
       this.num=index+1   //因为index从0开始num从一开始
     },
